@@ -14,36 +14,47 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+  
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  .container {
+    width: 750px;
+    margin: auto;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  .container {
+    width: 970px;
+    margin: auto;
+  }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
   .container {
     width: 1170px;
     margin: auto;
   }
 }
 
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    width: 1200px;
+    margin: auto;
+  }
+}
+
 .section {
-  margin-left: auto;
-  margin-right: auto;
   position: absolute;
   width: 100%;
-  /* z-index: 999; */
+  z-index: 9999;
 }
-.container {
+#top-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,11 +83,15 @@
 }
 .nav li a {
   margin-right: 3rem;
+  
+}
+.cont-email a,.nav li a {
   transition: color 0.6s ease;
 }
-.nav li a:hover {
+.nav li a:hover,.cont-email:hover a {
   background: transparent;
   color: #29ca8e;
+  
 }
 
 section ul {
@@ -96,3 +111,66 @@ section #header {
   background-size: cover;
   background-attachment: fixed;
 }
+
+.hero-main {
+  position: absolute;
+  z-index: 500;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  color: white;
+}
+ .hero-main h3 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+}
+.hero-main p {
+  font-size: 2.5rem;
+  width: 600px;
+  font-weight: 100;
+  margin: 15px 0 34px;
+  letter-spacing: 0.1rem;
+}
+
+.hero-main .sendit {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+  margin: auto;
+  border-radius: 23px;
+}
+input {
+  border: none;
+  outline: none;
+  
+}
+::placeholder {
+  color: rgb(162, 162, 162);
+  font-size: 0.85rem;
+}
+.hero-main .sendit input[type="email"]{
+  border-radius: 25px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 10px;
+}
+.hero-main .sendit input[value="Get started"] {
+  background-color: #29ca8e;
+  color: white;
+  transition: 0.5s ease background-color;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 25px;
+  padding: 14px 26px;
+  margin-right: -1px;
+ 
+}
+.hero-main .sendit input[value="Get started"]:hover {
+  background-color: #292E49;
+}
+
