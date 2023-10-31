@@ -242,3 +242,16 @@ input {
   color: #202020;
   border-bottom: 3px solid #29ca8e;
 }
+.hidden-text {
+  display: none;
+}
+
+#text1:target {
+  display: block;
+}
+#text2:target{
+  display: block;
+}
+#text3:target{
+  display: block;
+}
