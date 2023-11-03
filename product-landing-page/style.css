@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap");
 
 * {
   margin: 0;
@@ -8,13 +8,21 @@
   list-style: none;
   text-decoration: none;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  line-height: normal;
+}
 
 /* X-Small devices (portrait phones, less than 576px) */
 /* No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -61,37 +69,43 @@
   padding: 2rem;
   background-color: transparent;
 }
-.overlay{
-    background: -webkit-linear-gradient(to right, #292E49, #536976);
-    background: linear-gradient(to right, #292E49, #536976);
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.overlay {
+  background: -webkit-linear-gradient(to right, #292e49, #536976);
+  background: linear-gradient(to right, #292e49, #536976);
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .nav a {
   color: white;
+  cursor: pointer;
 }
 .header {
   display: flex;
   gap: 7rem;
   align-items: center;
 }
+
+
 .nav li a {
   margin-right: 3rem;
-  
 }
-.cont-email a,.nav li a {
+.cont-email a {
+  color: white;
+}
+.cont-email a,
+.nav li a {
   transition: color 0.6s ease;
 }
-.nav li a:hover,.cont-email:hover a {
+.nav li a:hover,
+.cont-email a:hover {
   background: transparent;
   color: #29ca8e;
-  
 }
 
 section ul {
@@ -117,11 +131,11 @@ section #header {
   z-index: 500;
   top: 58%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   color: white;
 }
- .hero-main h3 {
+.hero-main h3 {
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.2rem;
@@ -147,13 +161,12 @@ section #header {
 input {
   border: none;
   outline: none;
-  
 }
 ::placeholder {
   color: rgb(162, 162, 162);
   font-size: 0.85rem;
 }
-.hero-main .sendit input[type="email"]{
+.hero-main .sendit input[type="email"] {
   border-radius: 25px;
   width: 100%;
   padding-left: 15px;
@@ -168,32 +181,30 @@ input {
   border-radius: 25px;
   padding: 14px 26px;
   margin-right: -1px;
- 
 }
 .hero-main .sendit input[value="Get started"]:hover {
-  background-color: #292E49;
+  background-color: #292e49;
 }
 
 /* laptop section */
-.sec2{
-   padding-top:4rem;
+.sec2 {
+  padding-top: 4rem;
 }
-.features h1{
+.features h1 {
   font-weight: 300;
   font-family: inherit;
   line-height: normal;
   font-size: 3em;
   margin-bottom: 50px;
-
 }
-.section1 p{
+.section1 p {
   color: #757575;
   font-size: 14px;
   font-weight: normal;
   line-height: 24px;
   margin: 0 0 10px 0;
 }
-.section1 h2{
+.section1 h2 {
   margin: 0 0 5px 0;
   color: #353535;
   font-size: 2em;
@@ -206,26 +217,25 @@ input {
   grid-template-columns: 1fr 1fr;
   align-items: center;
 }
-.laptop-image img{
+.laptop-image img {
   display: block;
   max-width: 100%;
   height: auto;
-
- 
 }
-.services  li a{
+.services li a {
   margin-right: 35px;
   font-size: 18px;
   padding: 8px 0;
   color: #999999;
 }
-.services li a:hover , li a:focus{
+.services li a:hover,
+li a:focus {
   background: transparent;
   color: #202020;
   border-bottom: 3px solid #29ca8e;
 }
 .services ul {
-  margin-bottom: 2rem ;
+  margin-bottom: 2rem;
 }
 #section:target {
   background: transparent;
@@ -249,9 +259,234 @@ input {
 #text1:target {
   display: block;
 }
-#text2:target{
+#text2:target {
   display: block;
 }
-#text3:target{
+#text3:target {
   display: block;
+}
+/* profile section */
+
+.sec3 {
+  background-color: #f9f9f9;
+}
+.profile {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.profile-header {
+  grid-column: span 3;
+}
+.profile-header h1 {
+  padding-bottom: 40px;
+  line-height: 1.42857143;
+  font-size: 42px;
+  margin: 20px 0px 10px;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  font-weight: 300;
+  line-height: normal;
+}
+.profile-content {
+  display: flex;
+  flex-direction: column;
+}
+.profile-content img {
+  height: 410px;
+  width: 390px;
+}
+.profile-content h2 {
+  font-weight: 300;
+  line-height: normal;
+  margin: 5px 0 10px;
+  color: #353535;
+  font-weight: 300;
+  line-height: normal;
+  font: 28px "Open Sans", sans-serif;
+}
+.profile-content small {
+  font-weight: 300;
+
+  line-height: normal;
+
+  margin: 5px 0 10px;
+  font: 18px "Open Sans", sans-serif;
+}
+.profile-content p {
+  margin: 0px 0px 10px;
+  color: #757575;
+  font: 18px "Open Sans", sans-serif;
+}
+.profile-content__text {
+  padding: 40px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.profile-content__middle::after {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -20px;
+
+  right: 0;
+  left: 0;
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  border-top: 20px solid #f9f9f9;
+}
+.profile-content__after::after {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: -20px;
+
+  right: 0;
+  left: 0;
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid #f9f9f9;
+}
+/* people opinion  */
+
+.sec4 {
+  padding: 100px 0;
+}
+.people-opinion {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.people-opinion_container {
+  height: 65vh;
+  padding: 60px;
+}
+
+.people-opinion__img img {
+  width: 100%;
+  height: 615px;
+}
+.people-opinion__content {
+  background-color: #202020;
+  color: #ffffff;
+  width: 100%;
+  height: 615px;
+}
+.people-opinion__header h2 {
+  font-weight: 300;
+  line-height: normal;
+  margin: 20px 0 10px;
+  font: 42px "Open Sans", sans-serif;
+}
+
+.people-opinion__text h3 {
+  font-weight: 300;
+  line-height: normal;
+  margin: 5px 0 10px;
+  font: 24px "Open Sans", sans-serif;
+  color: #d9d9d9;
+  font-style: italic;
+  margin-top: 5px;
+}
+.people-opinion__person {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.people-opinion__person h4 {
+  font-weight: 300;
+  margin-left: 10px;
+  line-height: normal;
+  font: 18px "Open Sans", sans-serif;
+  color: #d9d9d9;
+}
+.people-opinion__person img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+}
+/* plan section */
+.sec5 {
+  background-color: #f9f9f9;
+  padding: 100px 0;
+}
+.plan-section__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.plan-section__header {
+  grid-column: span 3;
+}
+.plan-section__header {
+  padding: 0 0 40px;
+}
+.plan-section__header h1 {
+  font: 42px "Open Sans", "san-serif";
+  margin: 20px 0 10px;
+  font-weight: 300;
+  line-height: normal;
+  text-align: center;
+}
+.plan-section__pro,
+.plan-section__student,
+.plan-section__business {
+  align-items: center;
+  background: #ffffff;
+  border-right: 2px solid #f0f0f0;
+  padding: 20px 40px;
+  width: 400px;
+  height: 400px;
+}
+.pricing-title h2 {
+  font: 28px "Open Sans", "san-serif";
+  margin: 10px 0 20px;
+  font-weight: 300;
+  line-height: normal;
+}
+.pricing-info p {
+  font: 16px "Open Sans", "san-serif";
+  margin: 0px 0 10px;
+  color: #757575;
+}
+.pricing-info {
+  border-top: 2px solid #f0f0f0;
+  border-bottom: 2px solid #f0f0f0;
+}
+.pricing-info,
+.pricing-bottom {
+  padding: 20px 0;
+}
+.pricing-bottom button {
+  background-color: #29ca8e;
+  background: #29ca8e;
+  border: 0;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 12px 30px;
+  transition: 0.5s 0.2s background-color;
+  margin: 0 0 0 90px;
+}
+.pricing-info p {
+  font: 16px "Open Sans", "san-serif";
+  margin: 0px 0 10px;
+  color: #757575;
+}
+.pricing-bottom button:hover {
+  background-color: #292e49;
+  cursor: pointer;
+}
+.pricing-bottom span{
+  font: 14px "Open Sans", "san-serif";
 }
