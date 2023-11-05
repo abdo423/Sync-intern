@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap");
 
+::-webkit-scrollbar {
+  background-color: #d9d9d9;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #202020;
+}
 * {
   margin: 0;
   padding: 0;
@@ -18,45 +25,6 @@ h6 {
   line-height: normal;
 }
 
-/* X-Small devices (portrait phones, less than 576px) */
-/* No media query for `xs` since this is the default in Bootstrap */
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-    margin: auto;
-  }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-    margin: auto;
-  }
-}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-    margin: auto;
-  }
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-  .container {
-    width: 1200px;
-    margin: auto;
-  }
-}
-
 .section {
   position: absolute;
   width: 100%;
@@ -70,7 +38,6 @@ h6 {
   background-color: transparent;
 }
 .overlay {
-  background: -webkit-linear-gradient(to right, #292e49, #536976);
   background: linear-gradient(to right, #292e49, #536976);
   opacity: 0.9;
   position: absolute;
@@ -79,7 +46,7 @@ h6 {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 .nav a {
   color: white;
@@ -90,7 +57,6 @@ h6 {
   gap: 7rem;
   align-items: center;
 }
-
 
 .nav li a {
   margin-right: 3rem;
@@ -110,6 +76,7 @@ h6 {
 
 section ul {
   display: flex;
+  flex-wrap: wrap;
 }
 section #header {
   font-size: 25px;
@@ -143,7 +110,7 @@ section #header {
 }
 .hero-main p {
   font-size: 2.5rem;
-  width: 600px;
+
   font-weight: 100;
   margin: 15px 0 34px;
   letter-spacing: 0.1rem;
@@ -214,7 +181,7 @@ input {
 
 .laptop-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   align-items: center;
 }
 .laptop-image img {
@@ -269,13 +236,11 @@ li a:focus {
 
 .sec3 {
   background-color: #f9f9f9;
+  padding: 50px 0px;
 }
 .profile {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-.profile-header {
-  grid-column: span 3;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .profile-header h1 {
   padding-bottom: 40px;
@@ -292,8 +257,8 @@ li a:focus {
   flex-direction: column;
 }
 .profile-content img {
-  height: 410px;
-  width: 390px;
+  height: 100%;
+  width: 100%;
 }
 .profile-content h2 {
   font-weight: 300;
@@ -361,23 +326,28 @@ li a:focus {
 .people-opinion {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   align-items: center;
+  width: 100%;
 }
 .people-opinion_container {
-  height: 65vh;
+  height: 80vh;
   padding: 60px;
 }
-
+.people-opinion__img {
+  width: 100%;
+  height: 100%;
+}
 .people-opinion__img img {
   width: 100%;
-  height: 615px;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
 }
 .people-opinion__content {
   background-color: #202020;
   color: #ffffff;
   width: 100%;
-  height: 615px;
 }
 .people-opinion__header h2 {
   font-weight: 300;
@@ -420,7 +390,7 @@ li a:focus {
 }
 .plan-section__content {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   justify-items: center;
   align-items: center;
 }
@@ -444,8 +414,6 @@ li a:focus {
   background: #ffffff;
   border-right: 2px solid #f0f0f0;
   padding: 20px 40px;
-  width: 400px;
-  height: 400px;
 }
 .pricing-title h2 {
   font: 28px "Open Sans", "san-serif";
@@ -487,6 +455,290 @@ li a:focus {
   background-color: #292e49;
   cursor: pointer;
 }
-.pricing-bottom span{
+.pricing-bottom span {
   font: 14px "Open Sans", "san-serif";
+}
+#contact {
+  padding: 100px 0px;
+}
+.contact h1 {
+  text-align: center;
+  font-size: 2.4rem;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+textarea {
+  outline: none;
+  border: none;
+  height: 200px;
+  margin-top: 15px;
+}
+
+input[value="Send Message"] {
+  background-color: #202020;
+  padding: 15px 100px;
+  border-radius: 30px;
+  font-size: 0.89em;
+  color: white;
+  cursor: pointer;
+  transition: 1s ease all !important;
+}
+input[value="Send Message"]:hover {
+  background-color: #29ca8e;
+}
+input[value="Send Message"]:focus {
+  border: none;
+}
+input:not(input[value="Send Message"]) {
+  width: 300px;
+  height: 50px;
+}
+.contact form input:not(input[value="Send Message"]),
+textarea {
+  border-bottom: 3px solid #f0f0f0;
+  transition: 0.3s ease border-color;
+  padding: 10px;
+  margin: 10px;
+}
+.contact form input:focus:not(input[value="Send Message"]),
+textarea:focus {
+  border-color: #202020;
+}
+
+.form-div {
+  width: 100%;
+  height: 100%;
+}
+form {
+  text-align: center;
+}
+
+.footer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0px 0px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.footer p {
+  font-size: 0.86em;
+  color: #757575;
+}
+.footer p span {
+  color: #202020;
+  cursor: pointer;
+}
+.footer .social-ico i {
+  margin-right: 30px;
+  font-size: 1em;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  transition: 0.5s ease all;
+  cursor: pointer;
+}
+
+.social-ico i:hover {
+  background-color: #202020;
+  color: white !important;
+}
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (max-width: 575px) {
+  .header ul {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .burger {
+    display: block;
+    position: relative;
+  }
+  .burger .small {
+    display: none;
+    position: absolute;
+    background-color: #202020;
+    font-size: 1.1em;
+    width: 200px;
+    right: 0;
+  }
+  .burger .small li a {
+    display: block;
+    padding: 15px;
+    width: 100%;
+  }
+  .burger:hover .small {
+    display: block;
+  }
+  .small li:not(:last-child) a {
+    border-bottom: 1px solid #d9d9d9;
+  }
+  .cont-email {
+    display: none;
+  }
+  .hero-main p {
+    font-size: 1.5rem;
+  }
+  .hero-main .sendit input[type="submit"] {
+    padding: 5px 5px;
+  }
+  .hero-main .sendit {
+    width: 280px;
+  }
+  input:not(input[value="Send Message"]) {
+    height: 45px;
+  }
+  textarea {
+    width: 90%;
+  }
+  form input:not(input[value="Send Message"]) {
+    width: 90%;
+  }
+}
+
+@media (min-width: 576px) {
+  .header ul {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .burger {
+    display: block;
+    position: relative;
+  }
+  .burger .small {
+    display: none;
+    position: absolute;
+    background-color: #202020;
+    font-size: 1.1em;
+    width: 200px;
+    left: -80px;
+  }
+  .burger .small li a {
+    display: block;
+    padding: 15px;
+    width: 100%;
+  }
+  .burger:hover .small {
+    display: block;
+  }
+  .small li:not(:last-child) a {
+    border-bottom: 1px solid #d9d9d9;
+  }
+  .cont-email {
+    display: block;
+  }
+  .hero-main p {
+    font-size: 2rem;
+  }
+  textarea {
+    width: 80%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+    margin: auto;
+  }
+  .header ul {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .burger {
+    display: block;
+    position: relative;
+  }
+  .burger .small {
+    display: none;
+    position: absolute;
+    background-color: #202020;
+    font-size: 1.1em;
+    width: 200px;
+    left: -80px;
+  }
+  .burger .small li a {
+    display: block;
+    padding: 15px;
+    width: 100%;
+  }
+  .burger:hover .small {
+    display: block;
+  }
+  .small li:not(:last-child) a {
+    border-bottom: 1px solid #d9d9d9;
+  }
+  textarea {
+    width: 630px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+    margin: auto;
+  }
+  .header {
+    gap: 4rem;
+  }
+  .header ul {
+    display: flex;
+  }
+  .burger {
+    display: none;
+  }
+  textarea {
+    width: 924px;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+    margin: auto;
+  }
+  .header ul {
+    display: flex;
+  }
+  .burger {
+    display: none;
+  }
+  textarea {
+    width: 924px;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    width: 1200px;
+    margin: auto;
+  }
+  .header ul {
+    display: flex;
+  }
+  .burger {
+    display: none;
+  }
+  textarea {
+    width: 924px;
+  }
+  .hero-main p {
+    width: 500px;
+  }
 }
